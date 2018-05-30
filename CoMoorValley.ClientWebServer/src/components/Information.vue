@@ -37,15 +37,19 @@
     <!--Meet my team cards-->
     <section class="section">
       <div class="columns">
-        <div v-if="!navTabData.isTable" class="column is-3">
-          <button v-for="(tab, index) in navTabData.info" :key="index">
-            {{navTabData.tab}}
-          </button>
+        <div v-if="!navTabData.isTable" class="column">
+          <div class="field" 
+            v-for="tab in navTabData.info" 
+            :key="tab">
+            <button class="button is-dark">
+              {{tab}}
+            </button>
+          </div>
         </div>
-        <div v-else class="column is-3">
-          <table>
+        <div v-else class="column">
+          <table class="table is-bordered is-stribed">
             <tbody>
-              <tr v-for="(key, value) in tabs" :key="key">
+              <tr v-for="(value, key) in navTabData.info" :key="key">
                 <td>{{key}}</td>
                 <td>{{value}}</td>
               </tr>
@@ -64,7 +68,7 @@
     data () {
       return {
         title: 'Documents',
-        subtitle: 'Insert photo here',
+        subtitle: 'Insert picture as background',
         tabNavs: [
           {
             tab: 'Governing Documents',
@@ -97,16 +101,22 @@
             }
           }
         ],
-        navTabData: this.tabNavs[0]
+        navTab: 'Governing Documents'
+      }
+    },
+    computed: {
+      navTabData () {
+        let tabName = this.navTab
+        let index = this.tabNavs.findIndex(x => x.tab === tabName)
+        return this.tabNavs[index]
       }
     },
     methods: {
       activeTab: function (tab) {
-        return this.navTabData.tab === tab
+        return this.navTab === tab
       }, // Check if the tab is active on
       tabClicked: function (tab) {
-        let index = this.tabNavs.findIndex(x => x.tab === tab)
-        this.navTabData = this.tabNavs[index]
+        this.navTab = tab
         return
       } // When the user clicks on the tab, what needs to be done
     }

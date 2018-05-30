@@ -76,14 +76,14 @@
     name: 'contact',
     data () {
       return {
-        title: 'Send us some love !!!',
-        subtitle: 'We love to hear your feedback, why don\'t you fill up the below form...',
-        formContents: ['Name', 'Email', 'Phone Number', 'Company', 'Subject'],
+        title: 'Documents',
+        subtitle: 'Insert picture as background',
+        formContents: ['Name', 'Email', 'Phone Number', 'Subject'],
         orgUserInput: {
-          'Name': '', 'Email': '', 'Phone Number': '', 'Company': '', 'Subject': '', 'Message': ''
+          'Name': '', 'Email': '', 'Phone Number': '', 'Subject': '', 'Message': ''
         },
         userInput: {
-          'Name': '', 'Email': '', 'Phone Number': '', 'Company': '', 'Subject': '', 'Message': ''
+          'Name': '', 'Email': '', 'Phone Number': '', 'Subject': '', 'Message': ''
         },
         formError: false,
         showForm: true
