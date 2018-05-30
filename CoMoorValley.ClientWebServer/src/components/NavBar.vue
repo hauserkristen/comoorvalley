@@ -29,11 +29,11 @@
         <div class="navbar-end">
 
           <!--Main Options-->
-          <router-link v-for="navLeftItem in navLeftItems" 
-            :key="navLeftItem.item" 
+          <router-link v-for="navItem in navItems" 
+            :key="navItem.item" 
             class="navbar-item"
-            :to="navLeftItem.route">
-            {{ navLeftItem.item }}
+            :to="navItem.route">
+            {{ navItem.item }}
           </router-link>
 
         </div> <!--Left NavBar ends-->
@@ -50,7 +50,7 @@
       return {
         active: false,
         coMoorLogo: logo,
-        navLeftItems: [{
+        navItems: [{
           'item': 'Home',
           'route': '/'
         }, {
@@ -64,7 +64,7 @@
           'route': '/gallery'
         }, {
           'item': 'About Us',
-          'route': '/aboutus'
+          'route': '/about'
         }, {
           'item': 'Contact Us',
           'route': '/contact'

@@ -1,49 +1,47 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '@/components/Home'
-import Information from '@/components/Information'
-import News from '@/components/News'
-import Gallery from '@/components/Gallery'
-import AboutUs from '@/components/AboutUs'
-import ContactUs from '@/components/ContactUs'
-import Resource from 'vue-resource'
+import home from '@/components/Home'
+import information from '@/components/Information'
+import news from '@/components/News'
+import gallery from '@/components/Gallery'
+import about from '@/components/AboutUs'
+import contact from '@/components/ContactUs'
 
 Vue.use(Router)
-Vue.use(Resource)
 
 export default new Router({
   mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'Home',
+      component: home
     },
     {
       path: '/info',
-      name: 'info',
-      component: Information
+      name: 'Information',
+      component: information
     },
     {
       path: '/news',
-      name: 'news',
-      component: News
+      name: 'News',
+      component: news
     },
     {
       path: '/gallery',
-      name: 'gallery',
-      component: Gallery
+      name: 'Gallery',
+      component: gallery
     },
     {
-      path: '/aboutus',
-      name: 'aboutus',
-      component: AboutUs
+      path: '/about',
+      name: 'About',
+      component: about
     },
     {
       path: '/contact',
-      name: 'contact',
-      component: ContactUs
+      name: 'Contact',
+      component: contact
     }
   ]
 })
