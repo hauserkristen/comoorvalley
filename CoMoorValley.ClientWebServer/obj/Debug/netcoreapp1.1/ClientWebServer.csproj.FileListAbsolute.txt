@@ -1,0 +1,10 @@
+D:\CoMoor_Valley\Source\CoMoorValley.ClientWebServer\bin\Debug\netcoreapp1.1\ClientWebServer.deps.json
+D:\CoMoor_Valley\Source\CoMoorValley.ClientWebServer\bin\Debug\netcoreapp1.1\ClientWebServer.runtimeconfig.json
+D:\CoMoor_Valley\Source\CoMoorValley.ClientWebServer\bin\Debug\netcoreapp1.1\ClientWebServer.runtimeconfig.dev.json
+D:\CoMoor_Valley\Source\CoMoorValley.ClientWebServer\bin\Debug\netcoreapp1.1\ClientWebServer.dll
+D:\CoMoor_Valley\Source\CoMoorValley.ClientWebServer\bin\Debug\netcoreapp1.1\ClientWebServer.pdb
+D:\CoMoor_Valley\Source\CoMoorValley.ClientWebServer\obj\Debug\netcoreapp1.1\ClientWebServer.csproj.CoreCompileInputs.cache
+D:\CoMoor_Valley\Source\CoMoorValley.ClientWebServer\obj\Debug\netcoreapp1.1\ClientWebServer.AssemblyInfoInputs.cache
+D:\CoMoor_Valley\Source\CoMoorValley.ClientWebServer\obj\Debug\netcoreapp1.1\ClientWebServer.AssemblyInfo.cs
+D:\CoMoor_Valley\Source\CoMoorValley.ClientWebServer\obj\Debug\netcoreapp1.1\ClientWebServer.dll
+D:\CoMoor_Valley\Source\CoMoorValley.ClientWebServer\obj\Debug\netcoreapp1.1\ClientWebServer.pdb
