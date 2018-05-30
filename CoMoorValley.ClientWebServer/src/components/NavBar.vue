@@ -40,6 +40,7 @@
 
       </div> <!--NavBar Items ends-->
     </nav> <!--NavBar ends-->
+    {{navItems}}
   </div>
 </template>
 
