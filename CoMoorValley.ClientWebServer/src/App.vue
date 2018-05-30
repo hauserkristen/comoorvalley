@@ -4,51 +4,16 @@
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
-    <div class="modal" :class="{'is-active': currentModalInfo.isActive}">
-      <div class="modal-background"></div>
-      <div class="modal-card">
-        <header class="modal-card-head">
-          <p class="modal-card-title">{{currentModalInfo.title}}</p>
-          <button class="delete" aria-label="close" @click="disableModal()"></button>
-        </header>
-        <section class="modal-card-body">
-          <p>Hours worked: {{parseFloat(Math.round(currentModalInfo.currentHours * 100) / 100).toFixed(2)}}</p>
-          <p>Amount Earned ($): {{parseFloat(Math.round(currentModalInfo.currentHours * currentModalInfo.currentPayRate * 100) / 100).toFixed(2)}}</p>
-        </section>
-        <footer class="modal-card-foot">
-          <button class="button is-success" @click="disableModal()">Okay</button>
-          <button class="button" @click="disableModal()">Cancel</button>
-        </footer>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar'
-import {mapActions, mapGetters} from 'vuex'
 
 export default {
   name: 'app',
   components: {
     'nav-bar': NavBar
-  },
-  methods: {
-    ...mapActions([
-      'getNotifications',
-      'disableModal'
-    ])
-  },
-  computed: {
-    ...mapGetters([
-      'currentModalInfo'
-    ])
-  },
-  mounted: function () {
-    const that = this
-    setInterval(function () {
-      that.getNotifications()
-    }, 30000)
   }
 }
 </script>

@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Splash from '@/components/Splash'
-import LogIn from '@/components/LogIn'
-import Order from '@/components/FoodOrder'
-import NewEmployee from '@/components/NewEmployee'
+import Home from '@/components/Home'
+import Documents from '@/components/Documents'
+import News from '@/components/News'
+import Gallery from '@/components/Gallery'
+import AboutUs from '@/components/AboutUs'
+import ContactUs from '@/components/ContactUs'
 import Resource from 'vue-resource'
 
 Vue.use(Router)
@@ -16,22 +18,32 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Splash
+      component: Home
     },
     {
-      path: '/LogIn',
-      name: 'LogIn',
-      component: LogIn
+      path: '/documents',
+      name: 'Documents',
+      component: Documents
     },
     {
-      path: '/Order',
-      name: 'Order',
-      component: Order
+      path: '/news',
+      name: 'News',
+      component: News
     },
     {
-      path: '/NewEmployee',
-      name: 'NewEmployee',
-      component: NewEmployee
+      path: '/gallery',
+      name: 'Gallery',
+      component: Gallery
+    },
+    {
+      path: '/aboutus',
+      name: 'About Us',
+      component: AboutUs
+    },
+    {
+      path: '/contact',
+      name: 'Contact Us',
+      component: ContactUs
     }
   ]
 })
