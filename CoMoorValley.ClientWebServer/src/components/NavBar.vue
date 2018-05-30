@@ -12,8 +12,10 @@
             alt="Co-Moor Valley" width="28" height="28">
         </a>
         <!--workflow on the burger menu when clicked-->
-        <div v-on:click="active = !active" :class = "{'is-active': active }" class="navbar-burger burger"
-             data-target="navbarExampleTransparentExample">
+        <div v-on:click="active = !active" 
+          :class = "{'is-active': active }" 
+          class="navbar-burger burger"
+          data-target="navbarExampleTransparentExample">
           <span></span>
           <span></span>
           <span></span>
@@ -27,12 +29,12 @@
         <div class="navbar-end">
 
           <!--Main Options-->
-          <a v-for="navLeftItem in navLeftItems" 
+          <router-link v-for="navLeftItem in navLeftItems" 
             :key="navLeftItem.item" 
             class="navbar-item"
-            :href="navLeftItem.route">
+            :to="navLeftItem.route">
             {{ navLeftItem.item }}
-          </a>
+          </router-link>
 
         </div> <!--Left NavBar ends-->
 
@@ -52,8 +54,8 @@
           'item': 'Home',
           'route': '/'
         }, {
-          'item': 'Documents',
-          'route': '/documents'
+          'item': 'Information',
+          'route': '/info'
         }, {
           'item': 'News',
           'route': '/news'

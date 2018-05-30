@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/components/Home'
-import Documents from '@/components/Documents'
+import Information from '@/components/Information'
 import News from '@/components/News'
 import Gallery from '@/components/Gallery'
 import AboutUs from '@/components/AboutUs'
@@ -17,32 +17,32 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'home',
       component: Home
     },
     {
-      path: '/documents',
-      name: 'Documents',
-      component: Documents
+      path: '/info',
+      name: 'info',
+      component: Information
     },
     {
       path: '/news',
-      name: 'News',
+      name: 'news',
       component: News
     },
     {
       path: '/gallery',
-      name: 'Gallery',
+      name: 'gallery',
       component: Gallery
     },
     {
       path: '/aboutus',
-      name: 'About Us',
+      name: 'aboutus',
       component: AboutUs
     },
     {
       path: '/contact',
-      name: 'Contact Us',
+      name: 'contact',
       component: ContactUs
     }
   ]

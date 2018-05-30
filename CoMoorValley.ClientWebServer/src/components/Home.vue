@@ -22,6 +22,7 @@
 
 <script>
   export default {
+    name: 'home',
     data () {
       return {
         'title': 'Co-Moor Valley Condo Association',

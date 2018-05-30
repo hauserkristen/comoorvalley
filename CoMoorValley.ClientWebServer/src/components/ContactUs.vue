@@ -1,186 +1,122 @@
 <template>
-  <div class="row-container total">
-    <div class="col-container">
-      <div class="larger box">
-        
-        <div class="smaller box">
-          <div>
-            <h3>Main Menu Items:</h3>
-          </div>
-          <div class="col-container">
-            <button 
-              v-for="element in currentMenuItems.mainItems" :key="element"
-              class="button is-info"
-              @click="addMenuItem(element)"
-              style="margin-top: 2px; margin-bottom: 2px;"
-              :class="{'is-outlined': element !== mainItem}">
-              {{element}}
-            </button>
-          </div>
-        </div>
+  <div>
 
-        <div class="smaller box">
-          <div>
-            <h3>Additions:</h3>
-          </div>
-          <div class="col-container">
-            <button 
-              v-for="element in currentMenuItems.additions" :key="element"
-              class="button is-info" 
-              @click="addAddition(element)"
-              style="margin-top: 2px; margin-bottom: 2px;"
-              :class="{'is-outlined': additions.indexOf(element) === -1}">
-              {{element}}
-            </button>
-          </div>
+    <section class="hero is-dark is-medium">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title">
+            {{ title }}
+          </p>
+          <p class="subtitle">
+            {{ subtitle }}
+          </p>
         </div>
-
-        <button class="button is-success" @click="submitCurrentOrder()">Submit Order</button>
-      </div>    
-    </div>
-
-
-    <div class="col-container">
-      <div class="larger box">
-        <div>
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Table Number:</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control">
-                  <input class="input" type="number" placeholder="Table Number" v-model="tableNum">
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button style="margin: 10px;" class="button is-success" @click="submitCurrentTableOrder()">Submit Table Order</button>
-        <div class="left-row-container">
-          <label class="label">Order:</label>
-        </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Main Item</th>
-              <th>Additions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="element in orders" :key="element.mainItem">
-              <td>
-                <h3>{{element.mainItem}}</h3>
-              </td>
-              <td>
-                <h3 v-for="addition in element.additions" :key="addition">{{addition}}</h3>
-              </td>
-            </tr>
-          </tbody>
-        </table>
       </div>
-    </div>
+    </section>
+
+    <section class="section">
+      <div class="box">
+
+        <header class="title has-text-centered is-info">
+          Write to us
+        </header>
+
+        <article v-if="formError" class="message is-danger">
+          <div class="message-header">
+            <p>Form Error</p>
+            <button v-on:click="formError = false" class="delete" aria-label="delete"></button>
+          </div>
+          <div class="message-body">
+            Please fill in your Name, Email & Message, The mandatory fields on the form..
+          </div>
+        </article>
+
+        <div v-if="showForm">
+          <div v-for="formContent in formContents" 
+            :key="formContent"
+            class="field">
+            <label class="label">{{ formContent }}</label>
+            <div class="control">
+              <input class="input" type="text" v-model="userInput[formContent]" :placeholder="'Enter your ' + formContent + '...'">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+              <textarea class="textarea" v-model="userInput.Message" type="text" rows=10 placeholder="Enter your message"></textarea>
+            </div>
+          </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button v-on:click="sumbitPost" class="button is-primary">Submit</button>
+            </div>
+            <div class="control">
+              <button v-on:click="clearPost" class="button is-info">Clear</button>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="!showForm">
+          <h1 class="heading has-text-centered">
+            <i class="far fa-thumbs-up fa-6x"></i> <br /> <br /> <br />
+            Thanks for your message, our team will reach back in 2 business working day ...
+          </h1>
+        </div>
+
+      </div>
+    </section>
+
   </div>
 </template>
 
 <script>
-import {mapActions, mapGetters} from 'vuex'
-import {cloneDeep} from 'lodash'
-
-export default {
-  name: 'order',
-  data () {
-    return {
-      orders: [],
-      tableNum: 0,
-      mainItem: '',
-      additions: []
-    }
-  },
-  computed: {
-    selectType (type) {
-      this.submitEmployeeType(type)
-    },
-    ...mapGetters([
-      'currentMenuItems'
-    ])
-  },
-  methods: {
-    addAddition (item) {
-      const index = this.additions.indexOf(item)
-      if (index !== -1) {
-        this.additions.splice(index, 1)
-      } else {
-        this.additions.push(item)
+  export default {
+    name: 'contact',
+    data () {
+      return {
+        title: 'Send us some love !!!',
+        subtitle: 'We love to hear your feedback, why don\'t you fill up the below form...',
+        formContents: ['Name', 'Email', 'Phone Number', 'Company', 'Subject'],
+        orgUserInput: {
+          'Name': '', 'Email': '', 'Phone Number': '', 'Company': '', 'Subject': '', 'Message': ''
+        },
+        userInput: {
+          'Name': '', 'Email': '', 'Phone Number': '', 'Company': '', 'Subject': '', 'Message': ''
+        },
+        formError: false,
+        showForm: true
       }
     },
-    submitCurrentOrder () {
-      const order = {}
-      order.mainItem = this.mainItem
-      order.additions = cloneDeep(this.additions)
-      this.orders.push(order)
-
-      this.mainItem = ''
-      this.additions = []
-    },
-    submitCurrentTableOrder () {
-      this.submitTableOrder({orders: this.orders, tableNum: this.tableNum})
-      this.orders = []
-      this.tableNum = 0
-      this.mainItem = ''
-      this.additions = []
-    },
-    addMenuItem (item) {
-      this.mainItem = item
-    },
-    ...mapActions([
-      'submitTableOrder'
-    ])
+    methods: {
+      clearPost: function () {
+        this.userInput = this.orgUserInput
+        return
+      },
+      sumbitPost: function () {
+        if (this.userInput.Message === '' || this.userInput.Name === '' || this.userInput.Email === '') {
+          this.formError = true
+          return
+        } else {
+          this.formError = false
+          this.$http.post('https://jsonplaceholder.typicode.com/posts', {
+            title: this.userInput.Subject,
+            body: this.userInput.Message,
+            userId: 1
+          }).then(function (data) {
+            this.showForm = false
+            this.clearPost()
+          })
+        }
+      }
+    }
   }
-}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.total {
-  text-align: center;
-}
-
-.box {
-  margin-top: 10px;
-}
-
-.larger {
-  width: 400px;
-  margin-top: 10px;
-}
-
-.smaller {
-  width: 350px;
-  margin-top: 10px;
-}
-
-.col-container {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: flex-start;
-}
-
-.row-container {
-  padding: 5px;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-}
-
-.left-row-container {
-  padding: 5px;
-  display: flex;
-  flex-direction: row;
-  align-content: flex-start;
-  justify-content: flex-start;
-}
+  .section {
+    padding: 1rem 1.5rem;
+    margin-top: -50px;
+  }
 </style>
