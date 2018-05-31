@@ -76,7 +76,7 @@
     name: 'contact',
     data () {
       return {
-        title: 'Documents',
+        title: 'Contact Us',
         subtitle: 'Insert picture as background',
         formContents: ['Name', 'Email', 'Phone Number', 'Subject'],
         orgUserInput: {
