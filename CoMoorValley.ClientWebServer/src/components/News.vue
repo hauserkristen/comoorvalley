@@ -1,17 +1,7 @@
 <template>
   <div>
-    <section class="hero is-dark is-medium">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title has-text-centered">
-            {{ title }}
-          </h1>
-          <h2 class="subtitle has-text-centered">
-            {{ subtitle }}
-          </h2>
-        </div>
-      </div>
-    </section>
+    <page-header :title="title"></page-header>
+    
     <section class="section">
       <div class="content">
         News here
@@ -21,8 +11,13 @@
 </template>
 
 <script>
+import PageHeader from './utils/PageHeader'
+
 export default {
   name: 'news',
+  components: {
+    'page-header': PageHeader
+  },
   data () {
     return {
       title: 'News and Notices',

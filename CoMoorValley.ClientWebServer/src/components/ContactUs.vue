@@ -1,18 +1,6 @@
 <template>
   <div>
-
-    <section class="hero is-dark is-medium">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <p class="title">
-            {{ title }}
-          </p>
-          <p class="subtitle">
-            {{ subtitle }}
-          </p>
-        </div>
-      </div>
-    </section>
+    <page-header :title="title"></page-header>
 
     <section class="section">
       <div class="box">
@@ -72,46 +60,51 @@
 </template>
 
 <script>
-  export default {
-    name: 'contact',
-    data () {
-      return {
-        title: 'Contact Us',
-        subtitle: 'Insert picture as background',
-        formContents: ['Name', 'Email', 'Phone Number', 'Subject'],
-        orgUserInput: {
-          'Name': '', 'Email': '', 'Phone Number': '', 'Subject': '', 'Message': ''
-        },
-        userInput: {
-          'Name': '', 'Email': '', 'Phone Number': '', 'Subject': '', 'Message': ''
-        },
-        formError: false,
-        showForm: true
-      }
-    },
-    methods: {
-      clearPost: function () {
-        this.userInput = this.orgUserInput
-        return
+import PageHeader from './utils/PageHeader'
+
+export default {
+  name: 'contact',
+  components: {
+    'page-header': PageHeader
+  },
+  data () {
+    return {
+      title: 'Contact Us',
+      subtitle: 'Insert picture as background',
+      formContents: ['Name', 'Email', 'Phone Number', 'Subject'],
+      orgUserInput: {
+        'Name': '', 'Email': '', 'Phone Number': '', 'Subject': '', 'Message': ''
       },
-      sumbitPost: function () {
-        if (this.userInput.Message === '' || this.userInput.Name === '' || this.userInput.Email === '') {
-          this.formError = true
-          return
-        } else {
-          this.formError = false
-          this.$http.post('https://jsonplaceholder.typicode.com/posts', {
-            title: this.userInput.Subject,
-            body: this.userInput.Message,
-            userId: 1
-          }).then(function (data) {
-            this.showForm = false
-            this.clearPost()
-          })
-        }
+      userInput: {
+        'Name': '', 'Email': '', 'Phone Number': '', 'Subject': '', 'Message': ''
+      },
+      formError: false,
+      showForm: true
+    }
+  },
+  methods: {
+    clearPost: function () {
+      this.userInput = this.orgUserInput
+      return
+    },
+    sumbitPost: function () {
+      if (this.userInput.Message === '' || this.userInput.Name === '' || this.userInput.Email === '') {
+        this.formError = true
+        return
+      } else {
+        this.formError = false
+        this.$http.post('https://jsonplaceholder.typicode.com/posts', {
+          title: this.userInput.Subject,
+          body: this.userInput.Message,
+          userId: 1
+        }).then(function (data) {
+          this.showForm = false
+          this.clearPost()
+        })
       }
     }
   }
+}
 </script>
 
 <style scoped>

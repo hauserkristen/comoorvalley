@@ -1,18 +1,8 @@
 <template>
   <div>
-    <section class="hero is-dark is-medium">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title has-text-centered">
-            {{ title }}
-          </h1>
-          <h2 class="subtitle has-text-centered">
-            {{ subtitle }}
-          </h2>
-        </div>
-      </div>
-    </section>
-    <section class="section">
+    <page-header :title="title"></page-header>
+      
+    <section>
       <div class="content">
       
         <div class="card" v-for="(image, i) in images" :key="i">
@@ -32,16 +22,17 @@
 
 <script>
 import VueGallerySlideshow from 'vue-gallery-slideshow'
+import PageHeader from './utils/PageHeader'
 
 export default {
   name: 'gallery',
   components: {
-    'gallery-slideshow': VueGallerySlideshow
+    'gallery-slideshow': VueGallerySlideshow,
+    'page-header': PageHeader
   },
   data () {
     return {
       title: 'Photo Gallery',
-      subtitle: 'Insert picture as background',
       images: [
         {
           src: 'https://placekitten.com/801/800',

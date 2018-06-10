@@ -1,17 +1,7 @@
 <template>
   <div>
-    <section class="hero is-dark is-medium">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title has-text-centered">
-            {{ title }}
-          </h1>
-          <h2 class="subtitle has-text-centered">
-            {{ subtitle }}
-          </h2>
-        </div>
-      </div>
-    </section>
+    <page-header :title="title"></page-header>
+
     <section class="section">
       <div class="content">
         <h1>Hello World</h1>
@@ -109,15 +99,19 @@
 </template>
 
 <script>
-  export default {
-    name: 'about',
-    data () {
-      return {
-        title: 'About Us',
-        subtitle: 'Insert picture as background'
-      }
+import PageHeader from './utils/PageHeader'
+
+export default {
+  name: 'about',
+  components: {
+    'page-header': PageHeader
+  },
+  data () {
+    return {
+      title: 'About Us'
     }
   }
+}
 </script>
 
 <style>

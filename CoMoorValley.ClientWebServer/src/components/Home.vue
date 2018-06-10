@@ -26,7 +26,7 @@
     data () {
       return {
         'title': 'Co-Moor Valley Condo Association',
-        'subtitle': 'Where the convience of the city meets the beauty of the woods.'
+        'subtitle': 'Where the convenience of the city meets the beauty of the woods.'
       }
     }
   }

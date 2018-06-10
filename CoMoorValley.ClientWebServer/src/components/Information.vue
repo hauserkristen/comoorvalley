@@ -1,46 +1,19 @@
 <template>
   <div>
-    <!--Hero Banner-->
-    <section class="hero is-dark is-medium">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <p class="title">
-            {{ title }}
-          </p>
-          <p class="subtitle">
-            {{ subtitle }}
-          </p>
-        </div>
-      </div>
+    <page-header 
+      :title="title"
+      :tabData="tabs"
+      :isActiveTab="isActiveTab"
+      :tabClicked="tabClicked">
+    </page-header>
 
-      <!--We start from leadership and make that tab active, once the users start clicking-->
-      <!--the tab, we change the value of navTeam which changes the users list-->
-      <div class="hero-foot">
-        <nav class="tabs is-boxed is-fullwidth">
-          <div class="container">
-            <ul>
-              <li :class="{'is-active': activeTab(tabNav.tab)}" v-for="tabNav in tabNavs" :key="tabNav.tab">
-                <a v-on:click="tabClicked(tabNav.tab)">
-                  <span class="icon is-small">
-                    <font-awesome-icon :icon="tabNav.icon" />
-                  </span>
-                  <span>{{ tabNav.tab }}</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </section>
-
-    
     <section class="section">
       <div class="columns">
         <div class="column is-full-width center-parent">
           <table class="table is-bordered is-striped center-child">
             <tbody>
-              <tr v-for="(value, key) in navTabData.info" :key="key">
-                <td v-if="navTabData.isDownload">
+              <tr v-for="(value, key) in tabData.info" :key="key">
+                <td v-if="tabData.isDownload">
                   <div class="center-parent">
                     <button class="button is-dark center-child">
                       {{key}}
@@ -68,24 +41,24 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 import faFile from '@fortawesome/fontawesome-free-solid/faFile'
 import faAddressCard from '@fortawesome/fontawesome-free-solid/faAddressCard'
 import faInfo from '@fortawesome/fontawesome-free-solid/faInfo'
 import faCheckSquare from '@fortawesome/fontawesome-free-solid/faCheckSquare'
+import PageHeader from './utils/PageHeader'
 
 export default {
   name: 'info',
   components: {
-    'font-awesome-icon': FontAwesomeIcon
+    'page-header': PageHeader
   },
   data () {
     return {
-      title: 'Documents',
+      title: 'Information',
       subtitle: 'Insert picture as background',
-      tabNavs: [
+      tabs: [
         {
-          tab: 'Governing Documents',
+          name: 'Governing Documents',
           icon: faFile,
           isDownload: true,
           info: {
@@ -96,7 +69,7 @@ export default {
             'Sandy\'s Page': 'Description of document they are downloading goes here.'
           }
         }, {
-          tab: 'Forms',
+          name: 'Forms',
           icon: faCheckSquare,
           isDownload: true,
           info: {
@@ -104,7 +77,7 @@ export default {
             'Antennae Installation': 'Description of document they are downloading goes here.'
           }
         }, {
-          tab: 'Important Numbers',
+          name: 'Important Numbers',
           icon: faAddressCard,
           isDownload: false,
           info: {
@@ -114,7 +87,7 @@ export default {
             'City of Cleveland': '(123)-456-7890'
           }
         }, {
-          tab: 'General Information',
+          name: 'General Information',
           icon: faInfo,
           isDownload: false,
           info: {
@@ -128,14 +101,14 @@ export default {
     }
   },
   computed: {
-    navTabData () {
+    tabData () {
       let tabName = this.navTab
-      let index = this.tabNavs.findIndex(x => x.tab === tabName)
-      return this.tabNavs[index]
+      let index = this.tabs.findIndex(x => x.name === tabName)
+      return this.tabs[index]
     }
   },
   methods: {
-    activeTab: function (tab) {
+    isActiveTab: function (tab) {
       return this.navTab === tab
     }, // Check if the tab is active on
     tabClicked: function (tab) {

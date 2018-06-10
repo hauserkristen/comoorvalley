@@ -2,15 +2,15 @@
   <div>
     <nav 
       id="navbar" 
-      class="navbar is-fixed-top" 
-      :class="selectedNavTheme">
+      class="navbar is-fixed-top is-dark">
 
-      <!--Company Logo & Website-->
+      <!--Logo and burger menu options-->
       <div class="navbar-brand">
-        <a class="navbar-item">
+        <router-link class="navbar-item" to="/">
           <img :src="coMoorLogo" 
             alt="Co-Moor Valley" width="28" height="28">
-        </a>
+        </router-link>
+        
         <!--workflow on the burger menu when clicked-->
         <div v-on:click="active = !active" 
           :class = "{'is-active': active }" 
@@ -25,7 +25,7 @@
       <!--Navbar Options-->
       <div :class="{'is-active': active }" class="navbar-menu">
 
-        <!--Left Navbar list-->
+        <!--Right portion of Navbar-->
         <div class="navbar-end">
 
           <!--Main Options-->
@@ -36,7 +36,7 @@
             {{ navItem.item }}
           </router-link>
 
-        </div> <!--Left NavBar ends-->
+        </div> <!--Right NavBar ends-->
 
       </div> <!--NavBar Items ends-->
     </nav> <!--NavBar ends-->
@@ -44,7 +44,7 @@
 </template>
 
 <script>
-  import logo from './../assets/logo.png'
+  import logo from './../../assets/logo.png'
   export default {
     data () {
       return {
@@ -68,8 +68,7 @@
         }, {
           'item': 'Contact Us',
           'route': '/contact'
-        }],
-        'selectedNavTheme': 'is-dark'
+        }]
       }
     }
   }
