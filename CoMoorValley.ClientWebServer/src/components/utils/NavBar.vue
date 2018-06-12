@@ -7,8 +7,10 @@
       <!--Logo and burger menu options-->
       <div class="navbar-brand">
         <router-link class="navbar-item" to="/">
-          <img :src="coMoorLogo" 
-            alt="Co-Moor Valley" width="28" height="28">
+          <img :src="coMoorLogo"
+            alt="Co-Moor Valley"
+            width="28"
+            height="28">
         </router-link>
         
         <!--workflow on the burger menu when clicked-->
@@ -44,35 +46,36 @@
 </template>
 
 <script>
-  import logo from './../../assets/logo.png'
-  export default {
-    data () {
-      return {
-        active: false,
-        coMoorLogo: logo,
-        navItems: [{
-          'item': 'Home',
-          'route': '/'
-        }, {
-          'item': 'Information',
-          'route': '/info'
-        }, {
-          'item': 'News',
-          'route': '/news'
-        }, {
-          'item': 'Gallery',
-          'route': '/gallery'
-        }, {
-          'item': 'About Us',
-          'route': '/about'
-        }, {
-          'item': 'Contact Us',
-          'route': '/contact'
-        }]
-      }
+import logo from './../../assets/logo.png'
+export default {
+  data () {
+    return {
+      active: false,
+      coMoorLogo: logo,
+      navItems: [{
+        'item': 'Home',
+        'route': '/'
+      }, {
+        'item': 'Information',
+        'route': '/info'
+      }, {
+        'item': 'News',
+        'route': '/news'
+      }, {
+        'item': 'Gallery',
+        'route': '/gallery'
+      }, {
+        'item': 'About Us',
+        'route': '/about'
+      }, {
+        'item': 'Contact Us',
+        'route': '/contact'
+      }]
     }
   }
+}
 </script>
 
 <style scoped>
+
 </style>
