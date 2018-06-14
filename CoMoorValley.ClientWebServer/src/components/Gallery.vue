@@ -3,9 +3,9 @@
     <page-header :title="title"></page-header>
       
     <section>
-      <div class="content">
+      <div class="content grid">
       
-        <div class="card" v-for="(image, i) in images" :key="i">
+        <div class="card cell" v-for="(image, i) in images" :key="i">
           <div class="card-content">
             <img class="image"  :src="image.src" @click="onClick(i)">
             <p class="subtitle">
@@ -35,44 +35,48 @@ export default {
       title: 'Photo Gallery',
       images: [
         {
-          src: 'https://placekitten.com/801/800',
-          title: 'Kitty 1'
-        },
-        {
-          src: 'https://placekitten.com/802/800',
+          src: './../assets/001.png',
           title: 'Kitty 2'
         },
         {
-          src: 'https://placekitten.com/803/800',
+          src: './../assets/002.jng',
           title: 'Kitty 3'
         },
         {
-          src: 'https://placekitten.com/804/800',
+          src: './../assets/003.png',
           title: 'Kitty 4'
         },
         {
-          src: 'https://placekitten.com/805/800',
+          src: './../assets/004.jng',
           title: 'Kitty 5'
         },
         {
-          src: 'https://placekitten.com/806/800',
-          title: 'Kitty 6'
+          src: './../assets/005.jng',
+          title: 'Kitty 5'
         },
         {
-          src: 'https://placekitten.com/807/800',
-          title: 'Kitty 7'
+          src: './../assets/006.jng',
+          title: 'Kitty 5'
         },
         {
-          src: 'https://placekitten.com/808/800',
-          title: 'Kitty 8'
+          src: './../assets/007.jng',
+          title: 'Kitty 5'
         },
         {
-          src: 'https://placekitten.com/809/800',
-          title: 'Kitty 9'
+          src: './../assets/008.jng',
+          title: 'Kitty 5'
         },
         {
-          src: 'https://placekitten.com/810/800',
-          title: 'Kitty 10'
+          src: './../assets/009.jng',
+          title: 'Kitty 5'
+        },
+        {
+          src: './../assets/010.jng',
+          title: 'Kitty 5'
+        },
+        {
+          src: './../assets/011.jng',
+          title: 'Kitty 5'
         }
       ],
       index: null
@@ -100,5 +104,16 @@ export default {
   cursor: pointer;
   margin: 10px;
   border-radius: 3px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: 20%;
+  color: var(--green-custom);
+  background-color: var(--off-white-custom);
 }
 </style>

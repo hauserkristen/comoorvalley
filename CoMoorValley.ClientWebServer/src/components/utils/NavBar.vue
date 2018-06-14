@@ -13,7 +13,7 @@
             height="28">
         </router-link>
         
-        <!--workflow on the burger menu when clicked-->
+        <!--Burger menu when clicked-->
         <div v-on:click="active = !active" 
           :class = "{'is-active': active }" 
           class="navbar-burger burger"
@@ -33,7 +33,7 @@
           <!--Main Options-->
           <router-link v-for="navItem in navItems" 
             :key="navItem.item" 
-            class="navbar-item"
+            class="navbar-item has-text-primary"
             :to="navItem.route">
             {{ navItem.item }}
           </router-link>

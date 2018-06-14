@@ -2,7 +2,7 @@
   <section class="hero is-dark">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title has-text-centered">
+        <h1 class="title has-text-centered has-text-primary">
           {{ title }}
         </h1>
       </div>
@@ -51,7 +51,7 @@ export default {
     tabData: {
       type: Array,
       required: false,
-      default: []
+      default: () => []
     }
   }
 }

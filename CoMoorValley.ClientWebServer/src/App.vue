@@ -49,4 +49,11 @@ export default {
     background: var(--brown-custom-opaque);
     border-radius: 10px;
  }
+
+ body, html {
+   background-color: var(--off-white-custom);
+   color: var(--brown-custom);
+   height: 100%;
+   width: 100%;
+ }
 </style>
