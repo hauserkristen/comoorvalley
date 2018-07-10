@@ -1,10 +1,10 @@
 <template>
   <div>
     <page-header :title="title"></page-header>
-      
+
     <section>
       <div class="content grid">
-      
+
         <div class="card cell" v-for="(image, i) in images" :key="i">
           <div class="card-content">
             <img class="image"  :src="image.src" @click="onClick(i)">
@@ -13,7 +13,7 @@
             </p>
           </div>
         </div>
-        
+
         <gallery-slideshow :images="imageSources" :index="index" @close="index = null"></gallery-slideshow>
       </div>
     </section>
@@ -22,7 +22,7 @@
 
 <script>
 import VueGallerySlideshow from 'vue-gallery-slideshow'
-import PageHeader from './utils/PageHeader'
+import PageHeader from '../components/PageHeader'
 
 export default {
   name: 'gallery',
@@ -90,7 +90,6 @@ export default {
   methods: {
     onClick (i) {
       this.index = i
-      return
     }
   }
 }

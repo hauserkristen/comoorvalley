@@ -1,7 +1,7 @@
 <template>
   <div>
-    <nav 
-      id="navbar" 
+    <nav
+      id="navbar"
       class="navbar is-fixed-top is-dark">
 
       <!--Logo and burger menu options-->
@@ -12,10 +12,10 @@
             width="28"
             height="28">
         </router-link>
-        
+
         <!--Burger menu when clicked-->
-        <div v-on:click="active = !active" 
-          :class = "{'is-active': active }" 
+        <div v-on:click="active = !active"
+          :class = "{'is-active': active }"
           class="navbar-burger burger"
           data-target="navbarExampleTransparentExample">
           <span></span>
@@ -31,8 +31,8 @@
         <div class="navbar-end">
 
           <!--Main Options-->
-          <router-link v-for="navItem in navItems" 
-            :key="navItem.item" 
+          <router-link v-for="navItem in navItems"
+            :key="navItem.item"
             class="navbar-item has-text-primary"
             :to="navItem.route">
             {{ navItem.item }}
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import logo from './../../assets/logo.png'
+import logo from '../assets/logo.png'
 export default {
   data () {
     return {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <page-header :title="title"></page-header>
-    
+
     <section class="section">
       <div class="content">
         News here
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import PageHeader from './utils/PageHeader'
+import PageHeader from '../components/PageHeader'
 
 export default {
   name: 'news',

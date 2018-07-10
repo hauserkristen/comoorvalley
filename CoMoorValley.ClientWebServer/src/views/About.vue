@@ -99,7 +99,7 @@
 </template>
 
 <script>
-import PageHeader from './utils/PageHeader'
+import PageHeader from '../components/PageHeader'
 
 export default {
   name: 'about',

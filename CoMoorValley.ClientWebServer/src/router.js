@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import home from '@/components/Home'
-import information from '@/components/Information'
-import news from '@/components/News'
-import gallery from '@/components/Gallery'
-import about from '@/components/AboutUs'
-import contact from '@/components/ContactUs'
+import home from '@/views/Home'
+import information from '@/views/Information'
+import news from '@/views/News'
+import gallery from '@/views/Gallery'
+import about from '@/views/About'
+import contact from '@/views/Contact'
 
 Vue.use(Router)
 

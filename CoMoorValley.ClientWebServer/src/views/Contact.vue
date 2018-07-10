@@ -20,7 +20,7 @@
         </article>
 
         <div v-if="showForm">
-          <div v-for="formContent in formContents" 
+          <div v-for="formContent in formContents"
             :key="formContent"
             class="field">
             <label class="label">{{ formContent }}</label>
@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import PageHeader from './utils/PageHeader'
+import PageHeader from '../components/PageHeader'
 
 export default {
   name: 'contact',
@@ -85,12 +85,10 @@ export default {
   methods: {
     clearPost: function () {
       this.userInput = this.orgUserInput
-      return
     },
     sumbitPost: function () {
       if (this.userInput.Message === '' || this.userInput.Name === '' || this.userInput.Email === '') {
         this.formError = true
-        return
       } else {
         this.formError = false
         this.$http.post('https://jsonplaceholder.typicode.com/posts', {

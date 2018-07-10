@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import logoText from './../assets/logo_text.png'
+import logoText from '../assets/logo_text.png'
 
 export default {
   name: 'home',

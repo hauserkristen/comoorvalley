@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-header 
+    <page-header
       :title="title"
       :tabData="tabs"
       :isActiveTab="isActiveTab"
@@ -45,7 +45,7 @@ import faFile from '@fortawesome/fontawesome-free-solid/faFile'
 import faAddressCard from '@fortawesome/fontawesome-free-solid/faAddressCard'
 import faInfo from '@fortawesome/fontawesome-free-solid/faInfo'
 import faCheckSquare from '@fortawesome/fontawesome-free-solid/faCheckSquare'
-import PageHeader from './utils/PageHeader'
+import PageHeader from '../components/PageHeader'
 
 export default {
   name: 'info',
@@ -113,7 +113,6 @@ export default {
     }, // Check if the tab is active on
     tabClicked: function (tab) {
       this.navTab = tab
-      return
     } // When the user clicks on the tab, what needs to be done
   }
 }
