@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Battelle.MONA.ClientWebServer
+namespace CoMoorValley.ClientWebServer
 {
     public class Program
     {

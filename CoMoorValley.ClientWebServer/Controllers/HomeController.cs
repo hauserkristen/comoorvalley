@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Battelle.MONA.ClientWebServer.Controllers
+namespace CoMoorValley.ClientWebServer.Controllers
 {
     public class HomeController : Controller
     {

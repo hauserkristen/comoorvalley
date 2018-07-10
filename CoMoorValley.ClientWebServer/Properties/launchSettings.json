@@ -1,12 +1,4 @@
 {
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:57294/",
-      "sslPort": 0
-    }
-  },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
@@ -15,13 +7,13 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Battelle.MONA.ClientWebServer": {
+    "CoMoorValley.ClientWebServer": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:57273/"
+      "applicationUrl": "http://localhost:57270/"
     }
   }
 }

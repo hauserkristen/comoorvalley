@@ -35,48 +35,44 @@ export default {
       title: 'Photo Gallery',
       images: [
         {
-          src: './../assets/001.png',
-          title: 'Kitty 2'
+          src: require('./../assets/001.png'),
+          title: ''
         },
         {
-          src: './../assets/002.jng',
-          title: 'Kitty 3'
+          src: require('./../assets/002.jpg'),
+          title: ''
         },
         {
-          src: './../assets/003.png',
-          title: 'Kitty 4'
+          src: require('./../assets/004.jpg'),
+          title: ''
         },
         {
-          src: './../assets/004.jng',
-          title: 'Kitty 5'
+          src: require('./../assets/005.jpg'),
+          title: ''
         },
         {
-          src: './../assets/005.jng',
-          title: 'Kitty 5'
+          src: require('./../assets/006.jpg'),
+          title: ''
         },
         {
-          src: './../assets/006.jng',
-          title: 'Kitty 5'
+          src: require('./../assets/007.jpg'),
+          title: ''
         },
         {
-          src: './../assets/007.jng',
-          title: 'Kitty 5'
+          src: require('./../assets/008.jpg'),
+          title: ''
         },
         {
-          src: './../assets/008.jng',
-          title: 'Kitty 5'
+          src: require('./../assets/009.jpg'),
+          title: ''
         },
         {
-          src: './../assets/009.jng',
-          title: 'Kitty 5'
+          src: require('./../assets/010.jpg'),
+          title: ''
         },
         {
-          src: './../assets/010.jng',
-          title: 'Kitty 5'
-        },
-        {
-          src: './../assets/011.jng',
-          title: 'Kitty 5'
+          src: require('./../assets/011.jpg'),
+          title: ''
         }
       ],
       index: null

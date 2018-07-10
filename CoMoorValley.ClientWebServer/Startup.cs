@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 
-namespace Battelle.MONA.ClientWebServer
+namespace CoMoorValley.ClientWebServer
 {
     public class Startup
     {
