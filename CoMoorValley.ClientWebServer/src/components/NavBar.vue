@@ -1,8 +1,6 @@
 <template>
   <div>
-    <nav
-      id="navbar"
-      class="navbar is-fixed-top is-dark">
+    <nav class="navbar is-fixed-top is-dark">
 
       <!--Logo and burger menu options-->
       <div class="navbar-brand">
@@ -17,7 +15,7 @@
         <div v-on:click="active = !active"
           :class = "{'is-active': active }"
           class="navbar-burger burger"
-          data-target="navbarExampleTransparentExample">
+          data-target="navbar">
           <span></span>
           <span></span>
           <span></span>
@@ -25,7 +23,7 @@
       </div>
 
       <!--Navbar Options-->
-      <div :class="{'is-active': active }" class="navbar-menu">
+      <div :class="{'is-active': active }" id="navbar" class="navbar-menu">
 
         <!--Right portion of Navbar-->
         <div class="navbar-end">
@@ -33,7 +31,7 @@
           <!--Main Options-->
           <router-link v-for="navItem in navItems"
             :key="navItem.item"
-            class="navbar-item has-text-primary"
+            class="navbar-item"
             :to="navItem.route">
             {{ navItem.item }}
           </router-link>

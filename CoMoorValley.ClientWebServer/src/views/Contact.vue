@@ -5,10 +5,6 @@
     <section class="section">
       <div class="box">
 
-        <header class="title has-text-centered is-info">
-          Write to us
-        </header>
-
         <article v-if="formError" class="message is-danger">
           <div class="message-header">
             <p>Form Error</p>
@@ -49,7 +45,7 @@
         <div v-if="!showForm">
           <h1 class="heading has-text-centered">
             <i class="far fa-thumbs-up fa-6x"></i> <br /> <br /> <br />
-            Thanks for your message, our team will reach back in 2 business working day ...
+            Thanks for your message, our team will reach back to you as soon as possible.
           </h1>
         </div>
 
