@@ -101,11 +101,6 @@ export default {
   border-radius: 3px;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .cell {
   width: 20%;
   color: var(--green-custom);

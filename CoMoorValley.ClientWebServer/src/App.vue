@@ -56,4 +56,9 @@ export default {
    height: 100%;
    width: 100%;
  }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>

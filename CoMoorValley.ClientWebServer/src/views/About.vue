@@ -103,8 +103,4 @@ export default {
 </script>
 
 <style>
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-}
 </style>

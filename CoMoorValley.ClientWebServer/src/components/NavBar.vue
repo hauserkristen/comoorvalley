@@ -63,10 +63,10 @@ export default {
         'item': 'Gallery',
         'route': '/gallery'
       }, {
-        'item': 'About Us',
+        'item': 'About',
         'route': '/about'
       }, {
-        'item': 'Contact Us',
+        'item': 'Contact',
         'route': '/contact'
       }]
     }
