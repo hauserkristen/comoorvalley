@@ -44,27 +44,13 @@
               <p>{{memberContent}}</p>
 
               <div class="content grid">
-
-                <div v-for="(member, i) in boardMembers" :key="i" class="card cell">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <img :src="member.src" alt="No image available.">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content">
-                        <p class="title is-4">{{member.name}}</p>
-                        <p class="subtitle is-6">{{member.title}}</p>
-                      </div>
-                    </div>
-
-                    <div class="content">
-                      {{member.description}}
-                    </div>
-                  </div>
-                </div>
-
+                <board-member v-for="(member, i) in boardMembers"
+                  :key="i"
+                  :title="member.title"
+                  :name="member.name"
+                  :description="member.description"
+                  :src="member.src">
+                </board-member>
               </div>
 
             </div>
@@ -81,32 +67,34 @@
 import PageHeader from '../components/PageHeader'
 import photo1 from '../assets/019.jpg'
 import photo2 from '../assets/060.jpg'
+import BoardMember from '../components/BoardMember'
 
 export default {
   name: 'about',
   components: {
-    'page-header': PageHeader
+    'page-header': PageHeader,
+    'board-member': BoardMember
   },
   data () {
     return {
       title: 'About',
       rowOnePhoto: photo1,
       rowTwoPhoto: photo2,
-      introContent: "Content topics here: Offerings such as pool, fitness center, etc? City info.",
-      historyContent: "Content topics here: When was it founded? Home many homes? Different types? Difference from CoMoor?",
-      memberContent: "Content topics here: Intro to how many board members, positions and general idea of what they do.",
+      introContent: 'Content topics here: Offerings such as pool, fitness center, etc? City info.',
+      historyContent: 'Content topics here: When was it founded? Home many homes? Different types? Difference from CoMoor?',
+      memberContent: 'Content topics here: Intro to how many board members, positions and general idea of what they do.',
       boardMembers: [
         {
-          name: "John Smith",
-          title: "President",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
-          src: "https://bulma.io/images/placeholders/1280x960.png"
+          name: 'John Smith',
+          title: 'President',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.',
+          src: 'https://bulma.io/images/placeholders/1280x960.png'
         },
         {
-          name: "Jane Smith",
-          title: "Board Member",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
-          src: "https://bulma.io/images/placeholders/1280x960.png"
+          name: 'Jane Smith',
+          title: 'Board Member',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.',
+          src: 'https://bulma.io/images/placeholders/1280x960.png'
         }
       ]
     }
@@ -118,12 +106,5 @@ export default {
 .grid {
   display: flex;
   flex-wrap: wrap;
-}
-
-.cell {
-  width: 33%;
-  color: var(--green-custom);
-  background-color: var(--off-white-custom);
-  margin: 5px;
 }
 </style>
