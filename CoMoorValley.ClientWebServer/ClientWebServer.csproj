@@ -18,10 +18,16 @@
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
+
+  <Target Name="PrebuildScript" BeforeTargets="PrepareForBuild">
+    <Copy SourceFiles="$(ProjectDir)/src/css/initial-variables.sass" DestinationFolder="$(ProjectDir)/node_modules/bulma/sass/utilities"/>
+    <Copy SourceFiles="$(ProjectDir)/src/css/derived-variables.sass" DestinationFolder="$(ProjectDir)/node_modules/bulma/sass/utilities"/>
+    <Copy SourceFiles="$(ProjectDir)/src/css/navbar.sass" DestinationFolder="$(ProjectDir)/node_modules/bulma/sass/components"/>
+  </Target>
   
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
     <Exec Command="npm install" />
-	<Exec Command="npm run build" />
+	  <Exec Command="npm run build" />
   </Target>
 
 </Project>

@@ -44,12 +44,12 @@
               </div>
             </div>
 
-            <div class="message" v-if="!showForm">
-              <span class="icon is-small message-content">
+            <div class="submission-message" v-if="!showForm">
+              <span class="icon is-small submission-message-content">
                 <font-awesome-icon icon="thumbs-up" />
               </span>
 
-              <h1 class="has-text-centered message-content">
+              <h1 class="has-text-centered submission-message-content">
                 Thanks for your message, we will get back to you as soon as possible.
               </h1>
             </div>
@@ -113,13 +113,13 @@ export default {
   align-items: center;
 }
 
-.message {
+.submission-message {
   display:flex;
   flex-direction: row;
   background-color: white;
 }
 
-.message-content {
+.submission-message-content {
   align-self: center;
 }
 </style>
