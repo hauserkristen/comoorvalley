@@ -28,13 +28,8 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-
 export default {
   name: 'page-header',
-  components: {
-    'font-awesome-icon': FontAwesomeIcon
-  },
   props: {
     title: {
       type: String,

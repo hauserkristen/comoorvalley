@@ -41,10 +41,6 @@
 </template>
 
 <script>
-import faFile from '@fortawesome/fontawesome-free-solid/faFile'
-import faAddressCard from '@fortawesome/fontawesome-free-solid/faAddressCard'
-import faInfo from '@fortawesome/fontawesome-free-solid/faInfo'
-import faCheckSquare from '@fortawesome/fontawesome-free-solid/faCheckSquare'
 import PageHeader from '../components/PageHeader'
 
 export default {
@@ -59,7 +55,7 @@ export default {
       tabs: [
         {
           name: 'Governing Documents',
-          icon: faFile,
+          icon: 'file',
           isDownload: true,
           info: {
             'By-Laws': 'Description of document they are downloading goes here.',
@@ -70,7 +66,7 @@ export default {
           }
         }, {
           name: 'Forms',
-          icon: faCheckSquare,
+          icon: 'check-square',
           isDownload: true,
           info: {
             'Landscape Change Request': 'Description of document they are downloading goes here.',
@@ -78,7 +74,7 @@ export default {
           }
         }, {
           name: 'Important Numbers',
-          icon: faAddressCard,
+          icon: 'address-card',
           isDownload: false,
           info: {
             'President': '(123)-456-7890',
@@ -88,7 +84,7 @@ export default {
           }
         }, {
           name: 'General Information',
-          icon: faInfo,
+          icon: 'info',
           isDownload: false,
           info: {
             'Dues': 'Info on dues...',

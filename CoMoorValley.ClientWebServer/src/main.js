@@ -5,9 +5,18 @@ import App from './App'
 import router from './router'
 import store from './store'
 import VueResource from 'vue-resource'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faFile, faAddressCard, faInfo, faCheckSquare } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 Vue.config.productionTip = false
 Vue.use(VueResource)
+
+library.add(faFile)
+library.add(faAddressCard)
+library.add(faInfo)
+library.add(faCheckSquare)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 /* eslint-disable no-new */
 new Vue({
