@@ -20,15 +20,21 @@
 </template>
 
 <script>
-import logoText from '../assets/logo_text.png'
+import { getHomePage } from '../api.js'
 
 export default {
   name: 'home',
   data () {
     return {
-      coMoorLogo: logoText,
-      subtitle: 'Where the convenience of the city meets the beauty of the woods.'
+      coMoorLogo: '',
+      subtitle: ''
     }
+  },
+  mounted: function () {
+    let homeData = getHomePage()
+
+    this.data.coMoorLogo = require(homeData.coMoorLogo)
+    this.data.subtitle = homeData.subtitle
   }
 }
 </script>
