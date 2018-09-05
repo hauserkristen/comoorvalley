@@ -24,7 +24,7 @@
 
 <script>
 import PageHeader from '../components/PageHeader'
-import { getNewsPage } from '../api.js'
+import { newsPage } from '../../static/news.js'
 
 export default {
   name: 'news',
@@ -32,18 +32,7 @@ export default {
     'page-header': PageHeader
   },
   data () {
-    return {
-      title: '',
-      newsItems: []
-    }
-  },
-  mounted: function () {
-    let newsData = getNewsPage()
-
-    // TODO: Format data to include requires on images
-
-    this.data.title = newsData.title
-    this.data.newsItems = newsData.newsItems
+    return newsPage
   }
 }
 </script>

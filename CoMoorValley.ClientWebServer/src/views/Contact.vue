@@ -63,7 +63,7 @@
 
 <script>
 import PageHeader from '../components/PageHeader'
-import { getContactPage } from '../api.js'
+import { contactPage } from '../../static/contact.js'
 
 export default {
   name: 'contact',
@@ -71,19 +71,7 @@ export default {
     'page-header': PageHeader
   },
   data () {
-    return {
-      title: '',
-      email: '',
-      formContents: ['Name', 'Email', 'Phone Number', 'Subject'],
-      orgUserInput: {
-        'Name': '', 'Email': '', 'Phone Number': '', 'Subject': '', 'Message': ''
-      },
-      userInput: {
-        'Name': '', 'Email': '', 'Phone Number': '', 'Subject': '', 'Message': ''
-      },
-      formError: false,
-      showForm: true
-    }
+    return contactPage
   },
   methods: {
     clearPost: function () {
@@ -104,12 +92,6 @@ export default {
         })
       }
     }
-  },
-  mounted: function () {
-    let contactData = getContactPage()
-
-    this.data.title = contactData.title
-    this.data.email = contactData.email
   }
 }
 </script>

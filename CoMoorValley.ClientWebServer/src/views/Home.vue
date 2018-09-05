@@ -20,21 +20,12 @@
 </template>
 
 <script>
-import { getHomePage } from '../api.js'
+import { homePage } from '../../static/home.js'
 
 export default {
   name: 'home',
   data () {
-    return {
-      coMoorLogo: '',
-      subtitle: ''
-    }
-  },
-  mounted: function () {
-    let homeData = getHomePage()
-
-    this.data.coMoorLogo = require(homeData.coMoorLogo)
-    this.data.subtitle = homeData.subtitle
+    return homePage
   }
 }
 </script>

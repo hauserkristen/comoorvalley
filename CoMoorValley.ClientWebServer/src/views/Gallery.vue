@@ -23,7 +23,7 @@
 <script>
 import VueGallerySlideshow from 'vue-gallery-slideshow'
 import PageHeader from '../components/PageHeader'
-import { getGalleryPage } from '../api.js'
+import { galleryPage } from '../../static/gallery.js'
 
 export default {
   name: 'gallery',
@@ -32,11 +32,7 @@ export default {
     'page-header': PageHeader
   },
   data () {
-    return {
-      title: '',
-      images: [],
-      index: null
-    }
+    return galleryPage
   },
   computed: {
     imageSources () {
@@ -47,14 +43,6 @@ export default {
     onClick (i) {
       this.index = i
     }
-  },
-  mounted: function () {
-    let galleryData = getGalleryPage()
-
-    // TODO: Format data to include requires on images
-
-    this.data.title = galleryData.title
-    this.data.images = []
   }
 }
 </script>

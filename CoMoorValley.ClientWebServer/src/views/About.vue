@@ -68,7 +68,7 @@
 <script>
 import PageHeader from '../components/PageHeader'
 import BoardMember from '../components/BoardMember'
-import { getAboutPage } from '../api.js'
+import { aboutPage } from '../../static/about.js'
 
 export default {
   name: 'about',
@@ -77,24 +77,7 @@ export default {
     'board-member': BoardMember
   },
   data () {
-    return {
-      title: '',
-      infoRows: [],
-      boardMemberRow: {
-        title: '',
-        content: '',
-        members: []
-      }
-    }
-  },
-  mounted: function () {
-    let aboutData = getAboutPage()
-
-    // TODO: Format data to include requires on images
-
-    this.data.title = aboutData.title
-    this.data.infoRows = []
-    this.data.boardMemberRow = aboutData.boardMemberRow
+    return aboutPage
   }
 }
 </script>

@@ -42,7 +42,7 @@
 
 <script>
 import PageHeader from '../components/PageHeader'
-import { getInfoPage } from '../api.js'
+import { infoPage } from '../../static/info.js'
 
 export default {
   name: 'info',
@@ -50,11 +50,7 @@ export default {
     'page-header': PageHeader
   },
   data () {
-    return {
-      title: '',
-      tabs: [],
-      navTab: ''
-    }
+    return infoPage
   },
   computed: {
     tabData () {
@@ -70,13 +66,6 @@ export default {
     tabClicked: function (tab) {
       this.navTab = tab
     } // When the user clicks on the tab, what needs to be done
-  },
-  mounted: function () {
-    let infoData = getInfoPage()
-
-    this.data.title = infoData.title
-    this.data.tabs = infoData.tabs
-    this.navTab = infoData.tabs[0].name
   }
 }
 </script>
