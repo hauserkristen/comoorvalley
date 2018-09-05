@@ -82,11 +82,19 @@ export default {
         this.formError = true
       } else {
         this.formError = false
-        this.$http.post('https://jsonplaceholder.typicode.com/posts', {
+
+        let formContent = {
+          name: this.userInput.Name,
+          email: this.userInput.Email,
+          phone: this.userInput['Phone Number'],
           title: this.userInput.Subject,
-          body: this.userInput.Message,
-          userId: 1
-        }).then(function (data) {
+          body: this.userInput.Message
+        }
+
+        this.$http.post(
+          'http://getsimpleform.com/messages/ajax?form_api_token=c8a65e5d24b6775a02ec99a7ff69c474',
+          JSON.stringify(formContent)
+        ).then(function (data) {
           this.showForm = false
           this.clearPost()
         })
