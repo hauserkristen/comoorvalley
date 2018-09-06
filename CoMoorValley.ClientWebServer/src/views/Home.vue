@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { homePage } from '../../static/home.js'
+import { homePage } from '../../static/pageContent/home.js'
 
 export default {
   name: 'home',

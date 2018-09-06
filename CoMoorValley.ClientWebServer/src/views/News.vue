@@ -24,7 +24,7 @@
 
 <script>
 import PageHeader from '../components/PageHeader'
-import { newsPage } from '../../static/news.js'
+import { newsPage } from '../../static/pageContent/news.js'
 
 export default {
   name: 'news',

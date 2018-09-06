@@ -15,9 +15,9 @@
               <tr v-for="(value, key) in tabData.info" :key="key">
                 <td v-if="tabData.isDownload">
                   <div class="center-parent">
-                    <button class="button is-dark center-child">
+                    <a class="button is-dark center-child" :href="value.src" download>
                       {{key}}
-                    </button>
+                    </a>
                   </div>
                 </td>
                 <td v-else>
@@ -25,11 +25,18 @@
                     <p class="center-child">{{key}}</p>
                   </div>
                 </td>
-                <td>
+
+                <td v-if="tabData.isDownload">
+                  <div class="center-parent">
+                    <p class="center-child">{{value.content}}</p>
+                  </div>
+                </td>
+                <td v-else>
                   <div class="center-parent">
                     <p class="center-child">{{value}}</p>
                   </div>
                 </td>
+
               </tr>
             </tbody>
           </table>
@@ -42,7 +49,7 @@
 
 <script>
 import PageHeader from '../components/PageHeader'
-import { infoPage } from '../../static/info.js'
+import { infoPage } from '../../static/pageContent/info.js'
 
 export default {
   name: 'info',

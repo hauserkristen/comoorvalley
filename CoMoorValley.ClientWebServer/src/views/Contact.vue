@@ -63,7 +63,7 @@
 
 <script>
 import PageHeader from '../components/PageHeader'
-import { contactPage } from '../../static/contact.js'
+import { contactPage } from '../../static/pageContent/contact.js'
 
 export default {
   name: 'contact',
@@ -84,11 +84,11 @@ export default {
         this.formError = false
 
         let formContent = {
-          name: this.userInput.Name,
-          email: this.userInput.Email,
+          name: this.userInput['Name'],
+          email: this.userInput['Email'],
           phone: this.userInput['Phone Number'],
-          title: this.userInput.Subject,
-          body: this.userInput.Message
+          title: this.userInput['Subject'],
+          body: this.userInput['Message']
         }
 
         this.$http.post(

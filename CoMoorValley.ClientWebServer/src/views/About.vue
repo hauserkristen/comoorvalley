@@ -68,7 +68,7 @@
 <script>
 import PageHeader from '../components/PageHeader'
 import BoardMember from '../components/BoardMember'
-import { aboutPage } from '../../static/about.js'
+import { aboutPage } from '../../static/pageContent/about.js'
 
 export default {
   name: 'about',

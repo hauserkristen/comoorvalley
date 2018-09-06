@@ -23,7 +23,7 @@
 <script>
 import VueGallerySlideshow from 'vue-gallery-slideshow'
 import PageHeader from '../components/PageHeader'
-import { galleryPage } from '../../static/gallery.js'
+import { galleryPage } from '../../static/pageContent/gallery.js'
 
 export default {
   name: 'gallery',
