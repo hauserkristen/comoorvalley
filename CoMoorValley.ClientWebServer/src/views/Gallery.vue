@@ -2,10 +2,12 @@
   <div>
     <page-header :title="title"></page-header>
 
-    <section>
-      <h2>
-        {{subtitle}}
-      </h2>
+    <section class="section">
+      <section class="vertical-alignment">
+        <h2 class="subtitle colored">
+          {{subtitle}}
+        </h2>
+      </section>
       <div class="content grid">
 
         <div class="card cell" v-for="(image, i) in images" :key="i">
@@ -64,5 +66,16 @@ export default {
   width: 20%;
   color: var(--green-custom);
   background-color: var(--off-white-custom);
+}
+
+.vertical-alignment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.colored {
+  color: var(--green-custom)
 }
 </style>

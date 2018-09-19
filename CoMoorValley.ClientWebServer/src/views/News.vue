@@ -9,10 +9,13 @@
           <article class="tile is-child box">
             <p class="subtitle"><b>{{item.title}}</b></p>
             <p>{{item.date}}</p>
-            <p>{{item.location}}</p>
+            <p v-if="item.location != null">{{item.location}}</p>
             <br/>
             <div class="content">
               <p>{{item.content}}</p>
+              <a v-if="item.src " class="button is-dark center-child" :href="item.src" download>
+                Download Document
+              </a>
             </div>
           </article>
         </div>

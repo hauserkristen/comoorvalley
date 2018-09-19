@@ -33,7 +33,10 @@
                 </td>
                 <td v-else>
                   <div class="center-parent">
-                    <p class="center-child">{{value}}</p>
+                    <a v-if="isURL(value)" class="button is-dark center-child" :href="value" download>
+                      Link
+                    </a>
+                    <p v-else class="center-child">{{value}}</p>
                   </div>
                 </td>
 
@@ -72,7 +75,21 @@ export default {
     }, // Check if the tab is active on
     tabClicked: function (tab) {
       this.navTab = tab
-    } // When the user clicks on the tab, what needs to be done
+    }, // When the user clicks on the tab, what needs to be done
+    isURL: function (str) {
+      var pattern = new RegExp(
+        '^(https?:\\/\\/)?' +
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+        '((\\d{1,3}\\.){3}\\d{1,3}))' +
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+        '(\\?[;&a-z\\d%_.~+=-]*)?' +
+        '(\\#[-a-z\\d_]*)?$', 'i')
+      if (!pattern.test(str)) {
+        return false
+      } else {
+        return true
+      }
+    }
   }
 }
 </script>

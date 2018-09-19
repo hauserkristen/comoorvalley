@@ -17,7 +17,7 @@ export const infoPage = {
         },
         'Rules and Regulations': {
           content: 'Description of document they are downloading goes here.',
-          src: require('../downloads/RulesandRegulations.doc')
+          src: require('../downloads/RulesAndRegulations.doc')
         },
         'Antennae': {
           content: 'Description of document they are downloading goes here.',
@@ -25,7 +25,7 @@ export const infoPage = {
         },
         'Keeping with Tradition': {
           content: 'Description of document they are downloading goes here.',
-          src: ''
+          src: require('../downloads/KeepingWithTradition.pdf')
         }
       }
     }, {
@@ -35,7 +35,7 @@ export const infoPage = {
       info: {
         'Landscape Change Request': {
           content: 'Description of document they are downloading goes here.',
-          src: ''
+          src: require('../downloads/LandscapeChangeRequestForm.jpeg')
         },
         'Antennae Installation': {
           content: 'Description of document they are downloading goes here.',
@@ -47,13 +47,13 @@ export const infoPage = {
       icon: 'address-card',
       isDownload: false,
       info: {
-        'Mark Graham': '(216)533-6578',
-        'Tom Oravec': '(440)570-9914',
-        'Schill Grounds Management (Private Work Requests)': '(440)327-3071',
+        'Mark Graham': '(216)-533-6578',
+        'Tom Oravec': '(440)-570-9914',
+        'Schill Grounds Management (Private Work Requests)': '(440)-327-3071',
         'City of Strongsville (Phone)': '(440)580-3100',
-        'City of Strongsville (Email)': 'https://www.strongsville.org/',
+        'City of Strongsville': 'https://www.strongsville.org/',
         'City of Strongsville Trash Collection': 'https://www.strongsville.org/departments/service-department/refuse-collection',
-        'City of Strongsville Recycling': 'recycling https://www.strongsville.org/departments/service-department/recycling'
+        'City of Strongsville Recycling': 'https://www.strongsville.org/departments/service-department/recycling'
       }
     }, {
       name: 'General Information',

@@ -1,6 +1,6 @@
 export const galleryPage = {
   title: 'Photo Gallery',
-  subtitle: 'saying, Here are some photos of the Co-Moor Valley development on Blodgett Creek Trail for your enjoyment. Please feel free to submit photos that you would like to share.',
+  subtitle: 'Photos of the Co-Moor Valley development on Blodgett Creek Trail for your enjoyment. Please feel free to submit photos that you would like to share.',
   index: null,
   images: [
     {
