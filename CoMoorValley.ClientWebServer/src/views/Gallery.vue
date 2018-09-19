@@ -3,6 +3,9 @@
     <page-header :title="title"></page-header>
 
     <section>
+      <h2>
+        {{subtitle}}
+      </h2>
       <div class="content grid">
 
         <div class="card cell" v-for="(image, i) in images" :key="i">

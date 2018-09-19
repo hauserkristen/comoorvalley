@@ -4,11 +4,11 @@ export const aboutPage = {
     {
       src: require('./../../src/assets/019.jpg'),
       content: 'Content topics here: Offerings such as pool, fitness center, etc? City info.',
-      title: 'About CoMoor Valley',
+      title: 'About Co-Moor Valley',
       justification: 'left'
     }, {
       src: require('./../../src/assets/060.jpg'),
-      content: 'Content topics here: When was it founded? Home many homes? Different types? Difference from CoMoor?',
+      content: 'Content topics here: When was it founded? Home many homes? Different types? Difference from Co-Moor?',
       title: 'History',
       justification: 'right'
     }
