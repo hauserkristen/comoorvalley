@@ -63,6 +63,7 @@
 
 <script>
 import PageHeader from '../components/PageHeader'
+import { contactPage } from '../../static/pageContent/contact.js'
 
 export default {
   name: 'contact',
@@ -70,19 +71,7 @@ export default {
     'page-header': PageHeader
   },
   data () {
-    return {
-      title: 'Contact Us',
-      subtitle: 'Insert picture as background',
-      formContents: ['Name', 'Email', 'Phone Number', 'Subject'],
-      orgUserInput: {
-        'Name': '', 'Email': '', 'Phone Number': '', 'Subject': '', 'Message': ''
-      },
-      userInput: {
-        'Name': '', 'Email': '', 'Phone Number': '', 'Subject': '', 'Message': ''
-      },
-      formError: false,
-      showForm: true
-    }
+    return contactPage
   },
   methods: {
     clearPost: function () {
@@ -93,11 +82,19 @@ export default {
         this.formError = true
       } else {
         this.formError = false
-        this.$http.post('https://jsonplaceholder.typicode.com/posts', {
-          title: this.userInput.Subject,
-          body: this.userInput.Message,
-          userId: 1
-        }).then(function (data) {
+
+        let formContent = {
+          name: this.userInput['Name'],
+          email: this.userInput['Email'],
+          phone: this.userInput['Phone Number'],
+          title: this.userInput['Subject'],
+          body: this.userInput['Message']
+        }
+
+        this.$http.post(
+          'http://getsimpleform.com/messages/ajax?form_api_token=c8a65e5d24b6775a02ec99a7ff69c474',
+          JSON.stringify(formContent)
+        ).then(function (data) {
           this.showForm = false
           this.clearPost()
         })

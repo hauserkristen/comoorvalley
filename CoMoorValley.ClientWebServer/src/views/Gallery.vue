@@ -2,7 +2,12 @@
   <div>
     <page-header :title="title"></page-header>
 
-    <section>
+    <section class="section">
+      <section class="vertical-alignment">
+        <h2 class="subtitle colored">
+          {{subtitle}}
+        </h2>
+      </section>
       <div class="content grid">
 
         <div class="card cell" v-for="(image, i) in images" :key="i">
@@ -23,6 +28,7 @@
 <script>
 import VueGallerySlideshow from 'vue-gallery-slideshow'
 import PageHeader from '../components/PageHeader'
+import { galleryPage } from '../../static/pageContent/gallery.js'
 
 export default {
   name: 'gallery',
@@ -31,52 +37,7 @@ export default {
     'page-header': PageHeader
   },
   data () {
-    return {
-      title: 'Photo Gallery',
-      images: [
-        {
-          src: require('./../assets/001.png'),
-          title: ''
-        },
-        {
-          src: require('./../assets/002.jpg'),
-          title: ''
-        },
-        {
-          src: require('./../assets/004.jpg'),
-          title: ''
-        },
-        {
-          src: require('./../assets/005.jpg'),
-          title: ''
-        },
-        {
-          src: require('./../assets/006.jpg'),
-          title: ''
-        },
-        {
-          src: require('./../assets/007.jpg'),
-          title: ''
-        },
-        {
-          src: require('./../assets/008.jpg'),
-          title: ''
-        },
-        {
-          src: require('./../assets/009.jpg'),
-          title: ''
-        },
-        {
-          src: require('./../assets/010.jpg'),
-          title: ''
-        },
-        {
-          src: require('./../assets/011.jpg'),
-          title: ''
-        }
-      ],
-      index: null
-    }
+    return galleryPage
   },
   computed: {
     imageSources () {
@@ -105,5 +66,16 @@ export default {
   width: 20%;
   color: var(--green-custom);
   background-color: var(--off-white-custom);
+}
+
+.vertical-alignment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.colored {
+  color: var(--green-custom)
 }
 </style>
