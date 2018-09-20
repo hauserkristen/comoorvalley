@@ -15,9 +15,9 @@
               <tr v-for="(value, key) in tabData.info" :key="key">
                 <td v-if="tabData.isDownload">
                   <div class="center-parent">
-                    <button class="button is-dark center-child">
+                    <a class="button is-dark center-child" :href="value.src" download>
                       {{key}}
-                    </button>
+                    </a>
                   </div>
                 </td>
                 <td v-else>
@@ -25,11 +25,21 @@
                     <p class="center-child">{{key}}</p>
                   </div>
                 </td>
-                <td>
+
+                <td v-if="tabData.isDownload">
                   <div class="center-parent">
-                    <p class="center-child">{{value}}</p>
+                    <p class="center-child">{{value.content}}</p>
                   </div>
                 </td>
+                <td v-else>
+                  <div class="center-parent">
+                    <a v-if="isURL(value)" class="button is-dark center-child" :href="value" download>
+                      Link
+                    </a>
+                    <p v-else class="center-child">{{value}}</p>
+                  </div>
+                </td>
+
               </tr>
             </tbody>
           </table>
@@ -42,6 +52,7 @@
 
 <script>
 import PageHeader from '../components/PageHeader'
+import { infoPage } from '../../static/pageContent/info.js'
 
 export default {
   name: 'info',
@@ -49,52 +60,7 @@ export default {
     'page-header': PageHeader
   },
   data () {
-    return {
-      title: 'Information',
-      subtitle: 'Insert picture as background',
-      tabs: [
-        {
-          name: 'Governing Documents',
-          icon: 'file',
-          isDownload: true,
-          info: {
-            'By-Laws': 'Description of document they are downloading goes here.',
-            'Convenants': 'Description of document they are downloading goes here.',
-            'Rules and Regulations': 'Description of document they are downloading goes here.',
-            'Antennae': 'Description of document they are downloading goes here.',
-            'Sandy\'s Page': 'Description of document they are downloading goes here.'
-          }
-        }, {
-          name: 'Forms',
-          icon: 'check-square',
-          isDownload: true,
-          info: {
-            'Landscape Change Request': 'Description of document they are downloading goes here.',
-            'Antennae Installation': 'Description of document they are downloading goes here.'
-          }
-        }, {
-          name: 'Important Numbers',
-          icon: 'address-card',
-          isDownload: false,
-          info: {
-            'President': '(123)-456-7890',
-            'Vice President': '(123)-456-7890',
-            'Schili': '(123)-456-7890',
-            'City of Cleveland': '(123)-456-7890'
-          }
-        }, {
-          name: 'General Information',
-          icon: 'info',
-          isDownload: false,
-          info: {
-            'Dues': 'Info on dues...',
-            'Pool': 'Info on pool...',
-            'Garbage': 'Info on garbage...'
-          }
-        }
-      ],
-      navTab: 'Governing Documents'
-    }
+    return infoPage
   },
   computed: {
     tabData () {
@@ -109,7 +75,21 @@ export default {
     }, // Check if the tab is active on
     tabClicked: function (tab) {
       this.navTab = tab
-    } // When the user clicks on the tab, what needs to be done
+    }, // When the user clicks on the tab, what needs to be done
+    isURL: function (str) {
+      var pattern = new RegExp(
+        '^(https?:\\/\\/)?' +
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+        '((\\d{1,3}\\.){3}\\d{1,3}))' +
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+        '(\\?[;&a-z\\d%_.~+=-]*)?' +
+        '(\\#[-a-z\\d_]*)?$', 'i')
+      if (!pattern.test(str)) {
+        return false
+      } else {
+        return true
+      }
+    }
   }
 }
 </script>

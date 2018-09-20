@@ -3,48 +3,50 @@
     <page-header :title="title"></page-header>
 
     <section class="section">
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-8">
-          <article class="tile is-child box">
-            <p class="subtitle"><b>About CoMoor Valley</b></p>
-            <div class="content">
-              <p>{{introContent}}</p>
-            </div>
-          </article>
+      <div v-for="(row, i) in infoRows" :key="i">
+        <div v-if="row.justification == 'right'" class="tile is-ancestor">
+          <div class="tile is-parent is-8">
+            <article class="tile is-child box">
+              <p class="subtitle"><b>{{row.title}}</b></p>
+              <div class="content">
+                <p>{{row.content}}</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <img :src="row.src" width="300" height="300" >
+            </article>
+          </div>
         </div>
 
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-            <img :src="rowOnePhoto" width="300" height="300" >
-          </article>
+        <div v-else class="tile is-ancestor">
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <img :src="row.src" width="300" height="300" >
+            </article>
+          </div>
+          <div class="tile is-parent is-8">
+            <article class="tile is-child box">
+              <p class="subtitle"><b>{{row.title}}</b></p>
+              <div class="content">
+                <p>{{row.content}}</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
 
       <div class="tile is-ancestor">
         <div class="tile is-parent">
           <article class="tile is-child box">
-            <img :src="rowTwoPhoto" width="300" height="300" >
-          </article>
-        </div>
-        <div class="tile is-parent is-8">
-          <article class="tile is-child box">
-            <p class="subtitle"><b>History</b></p>
+            <p class="subtitle"><b>{{boardMemberRow.title}}</b></p>
             <div class="content">
-              <p>{{historyContent}}</p>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-            <p class="subtitle"><b>Board of Directors</b></p>
-            <div class="content">
-              <p>{{memberContent}}</p>
+              <p>{{boardMemberRow.content}}</p>
 
               <div class="content grid">
-                <board-member v-for="(member, i) in boardMembers"
+                <board-member v-for="(member, i) in boardMemberRow.members"
                   :key="i"
                   :title="member.title"
                   :name="member.name"
@@ -65,9 +67,8 @@
 
 <script>
 import PageHeader from '../components/PageHeader'
-import photo1 from '../assets/019.jpg'
-import photo2 from '../assets/060.jpg'
 import BoardMember from '../components/BoardMember'
+import { aboutPage } from '../../static/pageContent/about.js'
 
 export default {
   name: 'about',
@@ -76,28 +77,7 @@ export default {
     'board-member': BoardMember
   },
   data () {
-    return {
-      title: 'About',
-      rowOnePhoto: photo1,
-      rowTwoPhoto: photo2,
-      introContent: 'Content topics here: Offerings such as pool, fitness center, etc? City info.',
-      historyContent: 'Content topics here: When was it founded? Home many homes? Different types? Difference from CoMoor?',
-      memberContent: 'Content topics here: Intro to how many board members, positions and general idea of what they do.',
-      boardMembers: [
-        {
-          name: 'John Smith',
-          title: 'President',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.',
-          src: 'https://bulma.io/images/placeholders/1280x960.png'
-        },
-        {
-          name: 'Jane Smith',
-          title: 'Board Member',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.',
-          src: 'https://bulma.io/images/placeholders/1280x960.png'
-        }
-      ]
-    }
+    return aboutPage
   }
 }
 </script>

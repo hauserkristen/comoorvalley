@@ -20,15 +20,12 @@
 </template>
 
 <script>
-import logoText from '../assets/logo_text.png'
+import { homePage } from '../../static/pageContent/home.js'
 
 export default {
   name: 'home',
   data () {
-    return {
-      coMoorLogo: logoText,
-      subtitle: 'Where the convenience of the city meets the beauty of the woods.'
-    }
+    return homePage
   }
 }
 </script>
