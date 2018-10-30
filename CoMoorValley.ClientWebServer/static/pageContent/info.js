@@ -8,23 +8,23 @@ export const infoPage = {
       isDownload: true,
       info: {
         'By-Laws': {
-          content: 'Description of document they are downloading goes here.',
+          content: 'hese are the rules about how we govern ourselves, and operations and duties of the board of trustees.',
           src: require('../downloads/ByLaws.doc')
         },
-        'Convenants': {
-          content: 'Description of document they are downloading goes here.',
+        'Covenants': {
+          content: 'The original founding documents of The Co-Moor Valley Association.',
           src: require('../downloads/DeclarationOfCovenants.doc')
         },
         'Rules and Regulations': {
-          content: 'Description of document they are downloading goes here.',
+          content: 'These are the day-to-day rules for homeowners. Last updated in 2007, and currently being updated by the board.',
           src: require('../downloads/RulesAndRegulations.doc')
         },
         'Antennae': {
-          content: 'Description of document they are downloading goes here.',
+          content: 'Before you install an antenna or dish, read this.',
           src: require('../downloads/AntennaRules.pdf')
         },
         'Keeping with Tradition': {
-          content: 'Description of document they are downloading goes here.',
+          content: 'A thoughtful explanation of how we approach the maintenance and planting of front beds and courtyards, written by one of our residents.',
           src: require('../downloads/KeepingWithTradition.pdf')
         }
       }
@@ -34,12 +34,8 @@ export const infoPage = {
       isDownload: true,
       info: {
         'Landscape Change Request': {
-          content: 'Description of document they are downloading goes here.',
+          content: 'Before you make any changes to front landscape beds (or side beds that the association maintains), you must submit a landscape request form to the board.',
           src: require('../downloads/LandscapeChangeRequestForm.jpeg')
-        },
-        'Antennae Installation': {
-          content: 'Description of document they are downloading goes here.',
-          src: ''
         }
       }
     }, {

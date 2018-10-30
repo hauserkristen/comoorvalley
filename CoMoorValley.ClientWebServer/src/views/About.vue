@@ -15,16 +15,16 @@
           </div>
 
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <img :src="row.src" width="300" height="300" >
+            <article class="tile is-child box flexed">
+              <img class="flex-centered" :src="row.src" width="300" height="300" >
             </article>
           </div>
         </div>
 
         <div v-else class="tile is-ancestor">
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <img :src="row.src" width="300" height="300" >
+            <article class="tile is-child box flexed">
+              <img class="flex-centered" :src="row.src" width="300" height="300" >
             </article>
           </div>
           <div class="tile is-parent is-8">
@@ -83,4 +83,10 @@ export default {
 </script>
 
 <style>
+.flexed{
+  display: flex;
+}
+.flex-centered{
+  align-self: center;
+}
 </style>

@@ -11,7 +11,7 @@
       <div class="content grid">
 
         <div class="card cell" v-for="(image, i) in images" :key="i">
-          <div class="card-content">
+          <div>
             <img class="image"  :src="image.src" @click="onClick(i)">
             <p class="subtitle">
               {{image.title}}
@@ -63,7 +63,8 @@ export default {
 }
 
 .cell {
-  width: 20%;
+  width: 120px;
+  height: 120px;
   color: var(--green-custom);
   background-color: var(--off-white-custom);
 }

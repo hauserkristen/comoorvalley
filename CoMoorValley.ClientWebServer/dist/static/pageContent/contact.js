@@ -1,6 +1,6 @@
 export const contactPage = {
   title: 'Contact Us',
-  email: 'hausermkristen@gmail.com',
+  email: 'CVHA11062@gmail.com',
   formContents: ['Name', 'Email', 'Phone Number', 'Subject'],
   orgUserInput: {
     'Name': '',

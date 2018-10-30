@@ -46,7 +46,7 @@ export default {
 
 <style scoped>
 .cell {
-  width: 33%;
+  width: 200px;
   color: var(--green-custom);
   background-color: var(--off-white-custom);
   margin: 5px;
